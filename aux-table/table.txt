@@ -1,0 +1,98 @@
+ enum class Category : uint16_t{
+  Spaces,      Other,           Delimiters,
+  Backslash,   After_backslash, Opened_square_br,
+  After_colon, Hat,             Dollar,
+  Id_begin,    Id_body,         Hex_digits,
+  Dec_digits,  Oct_digits,      Bin_digits
+};
+
+/*
+ * It happens that in std::map<K,V> the key type is integer, and a lot of keys with the
+ * same corresponding values. If such a map must be a generated constant, then this map
+ * can be optimized. Namely, iterating through a map using range-based for, we will
+ * build a std::vector<std::pair<K, V>>. Then we group pairs std::pair<K, V> in pairs
+ * in the form (segment, a value of type V), where 'segment' is a struct consisting of
+ * lower bound and upper bound. Next, we permute the grouped pair in the such way that
+ * in order to search for in the array of the resulting values we can use the algorithm
+ * from the answer to exercise 6.2.24 of the book
+ * Knuth D.E. The art of computer programming. Volume 3. Sorting and search. ---
+ * 2nd ed. --- Addison-Wesley, 1998.
+*/
+
+#define RandomAccessIterator typename
+#define Callable             typename
+#define Integral             typename
+template<typename T>
+struct Segment{
+    T lower_bound;
+    T upper_bound;
+
+    Segment()               = default;
+    Segment(const Segment&) = default;
+    ~Segment()              = default;
+};
+
+template<typename T, typename V>
+struct Segment_with_value{
+    Segment<T> bounds;
+    V          value;
+
+    Segment_with_value()                          = default;
+    Segment_with_value(const Segment_with_value&) = default;
+    ~Segment_with_value()                         = default;
+};
+
+/* This function uses algorithm from the answer to the exercise 6.2.24 of the monography
+ *  Knuth D.E. The art of computer programming. Volume 3. Sorting and search. --- 2nd ed.
+ *  --- Addison-Wesley, 1998.
+*/
+template<RandomAccessIterator I, typename K>
+std::pair<bool, size_t> knuth_find(I it_begin, I it_end, K key)
+{
+    std::pair<bool, size_t> result = {false, 0};
+    size_t                  i      = 1;
+    size_t                  n      = it_end - it_begin;
+    while(i <= n){
+        const auto& curr        = it_begin[i - 1];
+        const auto& curr_bounds = curr.bounds;
+        if(key < curr_bounds.lower_bound){
+            i = 2 * i;
+        }else if(key > curr_bounds.upper_bound){
+            i = 2 * i + 1;
+        }else{
+            result.first = true; result.second = i - 1;
+            break;
+        }
+    }
+    return result;
+}
+
+static const Segment_with_value<char32_t, uint64_t> categories_table[] = {
+    {{U'_'   , U'_'   },  1536 },  {{U'L'   , U'L'   },  1600 },
+    {{U'n'   , U'n'   },  1616 },  {{U'('   , U'+'   },  20   },
+    {{U'['   , U'['   },  48   },  {{U'd'   , U'd'   },  1600 },
+    {{U's'   , U'w'   },  1536 },  {{U'$'   , U'$'   },  272  },
+    {{U'\?'  , U'\?'  },  20   },  {{U'R'   , U'R'   },  1600 },
+    {{U']'   , U']'   },  16   },  {{U'b'   , U'b'   },  1600 },
+    {{U'l'   , U'l'   },  1600 },  {{U'p'   , U'q'   },  1536 },
+    {{U'y'   , U'z'   },  1536 },  {{U'\"'  , U'\"'  },  16   },
+    {{U'%'   , U'%'   },  2064 },  {{U'0'   , U'9'   },  1024 },
+    {{U'A'   , U'K'   },  1536 },  {{U'M'   , U'Q'   },  1536 },
+    {{U'S'   , U'Z'   },  1536 },  {{U'\\'  , U'\\'  },  24   },
+    {{U'^'   , U'^'   },  144  },  {{U'a'   , U'a'   },  1536 },
+    {{U'c'   , U'c'   },  1536 },  {{U'e'   , U'k'   },  1536 },
+    {{U'm'   , U'm'   },  1536 },  {{U'o'   , U'o'   },  1600 },
+    {{U'r'   , U'r'   },  1600 },  {{U'x'   , U'x'   },  1600 },
+    {{U'{'   , U'}'   },  20   },  {{U'\x01', U' '   },  1    }
+};
+
+static constexpr size_t num_of_elems_in_categories_table = 32;
+
+uint64_t get_categories_set(char32_t c)
+{
+    auto t = knuth_find(categories_table,
+                        categories_table + num_of_elems_in_categories_table,
+                        c);
+    return t.first ? categories_table[t.second].value :
+                     1ULL << static_cast<uint64_t>(Category::Other);
+}
