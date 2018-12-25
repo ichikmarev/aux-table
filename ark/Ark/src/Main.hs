@@ -4,7 +4,7 @@ import Grammar
 import SLR1tables
 
 форматВывода :: Форматирование
-форматВывода = 
+форматВывода =
    Форматирование {
       форматСтраницы       = ФорматА0,
       ячеекДЕЙСТВИЕвСтроке = 20,
@@ -12,7 +12,7 @@ import SLR1tables
       пунктовВСтроке       = 10,
       правилВСтроке        = 3
    }
-   
+
 main :: IO ()
 main = do
    args <- getArgs
@@ -21,4 +21,4 @@ main = do
    else
       let name = head args in
       withFile name WriteMode (\handle -> do
-         hPutStrLn handle $ результат  грамматикаАрконы Мод форматВывода)
+         hPutStrLn handle $ результат  грамматикаАрконы Программа форматВывода)

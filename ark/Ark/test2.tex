@@ -1,0 +1,230 @@
+\documentclass[a0]{a0poster}
+\usepackage[cp1251]{inputenc}
+\usepackage{longtable}
+\usepackage{verbatim}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{array}
+\usepackage{hhline}
+\usepackage{indentfirst}
+\usepackage{mathtext}
+\usepackage[russian]{babel}
+\usepackage[pdftex]{graphicx}
+\usepackage{ccaption}
+\usepackage[dvipsnames,usenames]{color}
+\usepackage{hyperref}
+\hypersetup{unicode,breaklinks=true}
+\usepackage{syntax}
+\usepackage{multicol}
+\makeatletter
+\@addtoreset{equation}{section}
+\renewcommand{\theequation}{\thesection.\arabic{equation}}
+\@addtoreset{table}{section}
+\@addtoreset{figure}{section}
+\renewcommand{\thetable}{\thesection.\arabic{table}}
+\renewcommand{\thefigure}{\thesection.\arabic{figure}}
+\makeatother
+\footskip 8mm
+\setcounter{section}{0}
+ 
+\newcounter{rem}[section]
+\renewcommand{\therem}{\thesection.\arabic{rem}}
+\newenvironment{Remark}{\par\refstepcounter{rem}\bf Замечание \therem. \it}{\rm\par}
+ 
+\renewcommand{\theenumi}{\arabic{enumi}}
+\renewcommand{\labelenumi}{\theenumi)}
+ 
+\newcounter{lem}[section]
+\renewcommand{\thelem}{\thesection.\arabic{lem}}
+\newenvironment{Lemma}{\par\refstepcounter{lem}\bf Лемма \thelem. \it}{\rm\par}
+ 
+\newcounter{cor}[section]
+\renewcommand{\thecor}{\thesection.\arabic{cor}}
+\newenvironment{Corrolary}{\par\refstepcounter{cor}\bf Следствие \thecor. \it}{\rm\par}
+ 
+\newcounter{theor}[section]
+\renewcommand{\thetheor}{\thesection.\arabic{theor}}
+\newenvironment{Theorem}{\par\refstepcounter{theor}\bf Теорема \thetheor. \it}{\rm\par}
+ 
+\newenvironment{Proof}{\par\noindent\bf Доказательство.\rm}{ \par}
+ 
+\newcounter{exam}[section]
+\renewcommand{\theexam}{\thesection.\arabic{exam}}
+\newenvironment{Example}{\par\refstepcounter{exam}\bf Пример \theexam. \rm}{\rm\par}
+ 
+\newcounter{defin}[section]
+\renewcommand{\thedefin}{\thesection.\arabic{defin}}
+\newenvironment{Definition}{\par\refstepcounter{defin}\bf Определение \thedefin.\it}{\rm\par}
+ 
+\captiondelim{. } 
+\renewcommand{\syntleft}{\normalfont\itshape}
+\renewcommand{\syntright}{}
+ 
+\makeatletter
+\def\@seccntformat#1{\csname the#1\endcsname.\quad}
+\makeatother
+ 
+\begin{document}
+\tiny 
+Графа ДЕЙСТВИЕ:\\
+ДЕЙСТВИЕ[0, Формат]= \{перенос 2\}, ДЕЙСТВИЕ[1, $\blacklozenge$]= \{допуск\}, ДЕЙСТВИЕ[2, МУР]= \{перенос 3\}, ДЕЙСТВИЕ[3, ОткрФигСкобка]= \{перенос 4\}, ДЕЙСТВИЕ[4, Вход]= \{перенос 6\}, ДЕЙСТВИЕ[5, Секшон]= \{перенос 11\}, ДЕЙСТВИЕ[5, Макро]= \{перенос 10\}, ДЕЙСТВИЕ[6, Ид]= \{перенос 12\}, ДЕЙСТВИЕ[7, Секшон]= \{перенос 11\}, ДЕЙСТВИЕ[7, Макро]= \{перенос 10\}, ДЕЙСТВИЕ[7, ЗакрФигСкобка]= \{перенос 13\}, ДЕЙСТВИЕ[8, Секшон]= \{свёртка 5\}, ДЕЙСТВИЕ[8, Макро]= \{свёртка 5\}, \\
+ДЕЙСТВИЕ[8, ЗакрФигСкобка]= \{свёртка 5\}, ДЕЙСТВИЕ[9, Секшон]= \{свёртка 6\}, ДЕЙСТВИЕ[9, Макро]= \{свёртка 6\}, ДЕЙСТВИЕ[9, ЗакрФигСкобка]= \{свёртка 6\}, ДЕЙСТВИЕ[10, Ид]= \{перенос 16\}, ДЕЙСТВИЕ[11, Читаемый]= \{перенос 18\}, ДЕЙСТВИЕ[11, Записываемый]= \{перенос 19\}, ДЕЙСТВИЕ[11, Исполняемый]= \{перенос 20\}, ДЕЙСТВИЕ[12, Секшон]= \{свёртка 2\}, ДЕЙСТВИЕ[12, ЗакрФигСкобка]= \{свёртка 2\}, ДЕЙСТВИЕ[13, $\blacklozenge$]= \{свёртка 1\}, ДЕЙСТВИЕ[14, Секшон]= \{свёртка 3\}, ДЕЙСТВИЕ[14, Макро]= \{свёртка 3\}, ДЕЙСТВИЕ[14, ЗакрФигСкобка]= \{свёртка 3\}, ДЕЙСТВИЕ[15, Секшон]= \{свёртка 4\}, ДЕЙСТВИЕ[15, Макро]= \{свёртка 4\}, ДЕЙСТВИЕ[15, ЗакрФигСкобка]= \{свёртка 4\}, ДЕЙСТВИЕ[16, Ид]= \{перенос 26\}, ДЕЙСТВИЕ[16, Епсилон]= \{перенос 24\}, ДЕЙСТВИЕ[17, Читаемый]= \{перенос 18\}, \\
+ДЕЙСТВИЕ[17, Записываемый]= \{перенос 19\}, ДЕЙСТВИЕ[17, Исполняемый]= \{перенос 20\}, ДЕЙСТВИЕ[17, ОткрФигСкобка]= \{перенос 27\}, ДЕЙСТВИЕ[18, Читаемый]= \{свёртка 9\}, ДЕЙСТВИЕ[18, Записываемый]= \{свёртка 9\}, ДЕЙСТВИЕ[18, Исполняемый]= \{свёртка 9\}, ДЕЙСТВИЕ[18, ОткрФигСкобка]= \{свёртка 9\}, ДЕЙСТВИЕ[18, ЗакрФигСкобка]= \{свёртка 9\}, ДЕЙСТВИЕ[19, Читаемый]= \{свёртка 10\}, ДЕЙСТВИЕ[19, Записываемый]= \{свёртка 10\}, ДЕЙСТВИЕ[19, Исполняемый]= \{свёртка 10\}, ДЕЙСТВИЕ[19, ОткрФигСкобка]= \{свёртка 10\}, ДЕЙСТВИЕ[19, ЗакрФигСкобка]= \{свёртка 10\}, ДЕЙСТВИЕ[20, Читаемый]= \{свёртка 11\}, ДЕЙСТВИЕ[20, Записываемый]= \{свёртка 11\}, ДЕЙСТВИЕ[20, Исполняемый]= \{свёртка 11\}, ДЕЙСТВИЕ[20, ОткрФигСкобка]= \{свёртка 11\}, ДЕЙСТВИЕ[20, ЗакрФигСкобка]= \{свёртка 11\}, ДЕЙСТВИЕ[21, Читаемый]= \{свёртка 18\}, ДЕЙСТВИЕ[21, Записываемый]= \{свёртка 18\}, \\
+ДЕЙСТВИЕ[21, Исполняемый]= \{свёртка 18\}, ДЕЙСТВИЕ[21, ОткрФигСкобка]= \{свёртка 18\}, ДЕЙСТВИЕ[21, ЗакрФигСкобка]= \{свёртка 18\}, ДЕЙСТВИЕ[22, ОткрФигСкобка]= \{перенос 34\}, ДЕЙСТВИЕ[23, ТочкаЗапятая]= \{свёртка 21\}, ДЕЙСТВИЕ[23, Епсилон]= \{свёртка 21\}, ДЕЙСТВИЕ[23, ОткрФигСкобка]= \{свёртка 21\}, ДЕЙСТВИЕ[23, ЗакрФигСкобка]= \{свёртка 21\}, ДЕЙСТВИЕ[24, ТочкаЗапятая]= \{свёртка 22\}, ДЕЙСТВИЕ[24, Епсилон]= \{свёртка 22\}, ДЕЙСТВИЕ[24, ОткрФигСкобка]= \{свёртка 22\}, ДЕЙСТВИЕ[24, ЗакрФигСкобка]= \{свёртка 22\}, ДЕЙСТВИЕ[25, Зап]= \{перенос 35\}, ДЕЙСТВИЕ[26, ТочкаЗапятая]= \{свёртка 28\}, ДЕЙСТВИЕ[26, Епсилон]= \{свёртка 28\}, ДЕЙСТВИЕ[26, ОткрФигСкобка]= \{свёртка 28\}, ДЕЙСТВИЕ[26, ЗакрФигСкобка]= \{свёртка 28\}, ДЕЙСТВИЕ[27, Ид]= \{перенос 32\}, ДЕЙСТВИЕ[27, Макро]= \{перенос 10\}, ДЕЙСТВИЕ[27, ОткрКругСкобка]= \{перенос 33\}, \\
+ДЕЙСТВИЕ[28, Читаемый]= \{свёртка 19\}, ДЕЙСТВИЕ[28, Записываемый]= \{свёртка 19\}, ДЕЙСТВИЕ[28, Исполняемый]= \{свёртка 19\}, ДЕЙСТВИЕ[28, ОткрФигСкобка]= \{свёртка 19\}, ДЕЙСТВИЕ[28, ЗакрФигСкобка]= \{свёртка 19\}, ДЕЙСТВИЕ[29, ТочкаЗапятая]= \{перенос 39\}, ДЕЙСТВИЕ[29, ЗакрФигСкобка]= \{перенос 38\}, ДЕЙСТВИЕ[30, ТочкаЗапятая]= \{свёртка 12\}, ДЕЙСТВИЕ[30, ОткрФигСкобка]= \{свёртка 12\}, ДЕЙСТВИЕ[30, ЗакрФигСкобка]= \{свёртка 12\}, ДЕЙСТВИЕ[31, ТочкаЗапятая]= \{свёртка 16\}, ДЕЙСТВИЕ[31, ОткрФигСкобка]= \{свёртка 16\}, ДЕЙСТВИЕ[31, ЗакрФигСкобка]= \{свёртка 16\}, ДЕЙСТВИЕ[32, ТочкаЗапятая]= \{перенос 40\}, ДЕЙСТВИЕ[33, Ид]= \{перенос 41\}, ДЕЙСТВИЕ[34, ОткрФигСкобка]= \{перенос 37\}, ДЕЙСТВИЕ[35, Ид]= \{перенос 42\}, ДЕЙСТВИЕ[36, ЗакрФигСкобка]= \{перенос 46\}, ДЕЙСТВИЕ[37, Ид]= \{перенос 49\}, ДЕЙСТВИЕ[37, ОткрКругСкобка]= \{перенос 33\}, \\
+ДЕЙСТВИЕ[37, ОткрФигСкобка]= \{перенос 37\}, ДЕЙСТВИЕ[38, Секшон]= \{свёртка 8\}, ДЕЙСТВИЕ[38, Макро]= \{свёртка 8\}, ДЕЙСТВИЕ[38, ЗакрФигСкобка]= \{свёртка 8\}, ДЕЙСТВИЕ[39, Ид]= \{перенос 45\}, ДЕЙСТВИЕ[39, Макро]= \{перенос 10\}, ДЕЙСТВИЕ[39, ОткрКругСкобка]= \{перенос 33\}, ДЕЙСТВИЕ[40, ТочкаЗапятая]= \{свёртка 17\}, ДЕЙСТВИЕ[40, ОткрФигСкобка]= \{свёртка 17\}, ДЕЙСТВИЕ[40, ЗакрФигСкобка]= \{свёртка 17\}, ДЕЙСТВИЕ[41, ТочкаЗапятая]= \{перенос 50\}, ДЕЙСТВИЕ[42, ТочкаЗапятая]= \{свёртка 27\}, ДЕЙСТВИЕ[42, Епсилон]= \{свёртка 27\}, ДЕЙСТВИЕ[42, ОткрФигСкобка]= \{свёртка 27\}, ДЕЙСТВИЕ[42, ЗакрФигСкобка]= \{свёртка 27\}, ДЕЙСТВИЕ[43, ТочкаЗапятая]= \{свёртка 13\}, ДЕЙСТВИЕ[43, ОткрФигСкобка]= \{свёртка 13\}, ДЕЙСТВИЕ[43, ЗакрФигСкобка]= \{свёртка 13\}, ДЕЙСТВИЕ[44, ТочкаЗапятая]= \{свёртка 14\}, ДЕЙСТВИЕ[44, ОткрФигСкобка]= \{свёртка 14\}, \\
+ДЕЙСТВИЕ[44, ЗакрФигСкобка]= \{свёртка 14\}, ДЕЙСТВИЕ[45, ТочкаЗапятая]= \{перенос 51\}, ДЕЙСТВИЕ[46, Секшон]= \{свёртка 7\}, ДЕЙСТВИЕ[46, ТочкаЗапятая]= \{свёртка 7\}, ДЕЙСТВИЕ[46, Макро]= \{свёртка 7\}, ДЕЙСТВИЕ[46, Епсилон]= \{свёртка 7\}, ДЕЙСТВИЕ[46, ОткрФигСкобка]= \{свёртка 7\}, ДЕЙСТВИЕ[46, ЗакрФигСкобка]= \{свёртка 7\}, ДЕЙСТВИЕ[47, ЗакрФигСкобка]= \{перенос 53\}, ДЕЙСТВИЕ[48, ТочкаЗапятая]= \{перенос 54\}, ДЕЙСТВИЕ[49, ТочкаЗапятая]= \{перенос 55\}, ДЕЙСТВИЕ[50, ЗакрКругСкобка]= \{перенос 52\}, ДЕЙСТВИЕ[51, ТочкаЗапятая]= \{свёртка 15\}, ДЕЙСТВИЕ[51, ОткрФигСкобка]= \{свёртка 15\}, ДЕЙСТВИЕ[51, ЗакрФигСкобка]= \{свёртка 15\}, ДЕЙСТВИЕ[52, Вопрос]= \{перенос 58\}, ДЕЙСТВИЕ[53, ТочкаЗапятая]= \{свёртка 23\}, ДЕЙСТВИЕ[53, ОткрФигСкобка]= \{свёртка 23\}, ДЕЙСТВИЕ[53, ЗакрФигСкобка]= \{свёртка 23\}, ДЕЙСТВИЕ[54, Ид]= \{перенос 57\}, \\
+ДЕЙСТВИЕ[54, ОткрКругСкобка]= \{перенос 33\}, ДЕЙСТВИЕ[55, ЗакрФигСкобка]= \{перенос 59\}, ДЕЙСТВИЕ[56, ЗакрФигСкобка]= \{перенос 61\}, ДЕЙСТВИЕ[57, ТочкаЗапятая]= \{перенос 62\}, ДЕЙСТВИЕ[58, Макро]= \{перенос 10\}, ДЕЙСТВИЕ[59, ТочкаЗапятая]= \{свёртка 26\}, ДЕЙСТВИЕ[59, ОткрФигСкобка]= \{свёртка 26\}, ДЕЙСТВИЕ[59, ЗакрФигСкобка]= \{свёртка 26\}, ДЕЙСТВИЕ[60, Ид]= \{перенос 26\}, ДЕЙСТВИЕ[60, Епсилон]= \{перенос 24\}, ДЕЙСТВИЕ[61, ТочкаЗапятая]= \{свёртка 24\}, ДЕЙСТВИЕ[61, ОткрФигСкобка]= \{свёртка 24\}, ДЕЙСТВИЕ[61, ЗакрФигСкобка]= \{свёртка 24\}, ДЕЙСТВИЕ[62, ЗакрФигСкобка]= \{перенос 64\}, ДЕЙСТВИЕ[63, ТочкаЗапятая]= \{свёртка 20\}, ДЕЙСТВИЕ[63, ОткрФигСкобка]= \{свёртка 20\}, ДЕЙСТВИЕ[63, ЗакрФигСкобка]= \{свёртка 20\}, ДЕЙСТВИЕ[64, ТочкаЗапятая]= \{свёртка 25\}, ДЕЙСТВИЕ[64, ОткрФигСкобка]= \{свёртка 25\}, ДЕЙСТВИЕ[64, ЗакрФигСкобка]= \{свёртка 25\}, 
+\\
+ 
+Графа ПЕРЕХОД:\\
+ПЕРЕХОД[0, \textcolor{Green}{\textit{Программа}}]=1, ПЕРЕХОД[4, \textcolor{Green}{\textit{ТочкаВхода}}]=5, ПЕРЕХОД[5, \textcolor{Green}{\textit{ТелоПрограммы}}]=7, ПЕРЕХОД[5, \textcolor{Green}{\textit{Макрос}}]=8, ПЕРЕХОД[5, \textcolor{Green}{\textit{Секция}}]=9, ПЕРЕХОД[7, \textcolor{Green}{\textit{Макрос}}]=14, \\
+ПЕРЕХОД[7, \textcolor{Green}{\textit{Секция}}]=15, ПЕРЕХОД[11, \textcolor{Green}{\textit{АтрибутСекции}}]=21, ПЕРЕХОД[11, \textcolor{Green}{\textit{АтрибутыСекции}}]=17, ПЕРЕХОД[16, \textcolor{Green}{\textit{Аргументы}}]=22, ПЕРЕХОД[16, \textcolor{Green}{\textit{АргументыШтрих}}]=25, ПЕРЕХОД[16, \textcolor{Green}{\textit{Аргументы'}}]=23, ПЕРЕХОД[17, \textcolor{Green}{\textit{АтрибутСекции}}]=28, ПЕРЕХОД[27, \textcolor{Green}{\textit{Макрос}}]=30, ПЕРЕХОД[27, \textcolor{Green}{\textit{ТелоСекции}}]=29, ПЕРЕХОД[27, \textcolor{Green}{\textit{Команда}}]=31, ПЕРЕХОД[34, \textcolor{Green}{\textit{ТелоМакроса}}]=36, ПЕРЕХОД[37, \textcolor{Green}{\textit{Команда}}]=47, ПЕРЕХОД[37, \textcolor{Green}{\textit{ТелоМакроса}}]=48, ПЕРЕХОД[39, \textcolor{Green}{\textit{Макрос}}]=43, ПЕРЕХОД[39, \textcolor{Green}{\textit{Команда}}]=44, ПЕРЕХОД[54, \textcolor{Green}{\textit{Команда}}]=56, ПЕРЕХОД[58, \textcolor{Green}{\textit{Макрос}}]=60, ПЕРЕХОД[60, \textcolor{Green}{\textit{Аргументы}}]=63, ПЕРЕХОД[60, \textcolor{Green}{\textit{АргументыШтрих}}]=25, ПЕРЕХОД[60, \textcolor{Green}{\textit{Аргументы'}}]=23, 
+\\
+ 
+Пронумерованные правила расширенной грамматики:\\
+0: \textcolor{Green}{$\mho$}\textcolor{Green}{$\to$}\textcolor{Green}{\textit{Программа}} 1: \textcolor{Green}{\textit{Программа}} \textcolor{Green}{$\to$}Формат МУР ОткрФигСкобка \textcolor{Green}{\textit{ТочкаВхода}} \textcolor{Green}{\textit{ТелоПрограммы}} ЗакрФигСкобка 2: \textcolor{Green}{\textit{ТочкаВхода}} \textcolor{Green}{$\to$}Вход Ид \\
+3: \textcolor{Green}{\textit{ТелоПрограммы}} \textcolor{Green}{$\to$}\textcolor{Green}{\textit{ТелоПрограммы}} \textcolor{Green}{\textit{Макрос}} 4: \textcolor{Green}{\textit{ТелоПрограммы}} \textcolor{Green}{$\to$}\textcolor{Green}{\textit{ТелоПрограммы}} \textcolor{Green}{\textit{Секция}} 5: \textcolor{Green}{\textit{ТелоПрограммы}} \textcolor{Green}{$\to$}\textcolor{Green}{\textit{Макрос}} \\
+6: \textcolor{Green}{\textit{ТелоПрограммы}} \textcolor{Green}{$\to$}\textcolor{Green}{\textit{Секция}} 7: \textcolor{Green}{\textit{Макрос}} \textcolor{Green}{$\to$}Макро Ид \textcolor{Green}{\textit{Аргументы}} ОткрФигСкобка \textcolor{Green}{\textit{ТелоМакроса}} ЗакрФигСкобка 8: \textcolor{Green}{\textit{Секция}} \textcolor{Green}{$\to$}Секшон \textcolor{Green}{\textit{АтрибутыСекции}} ОткрФигСкобка \textcolor{Green}{\textit{ТелоСекции}} ЗакрФигСкобка \\
+9: \textcolor{Green}{\textit{АтрибутСекции}} \textcolor{Green}{$\to$}Читаемый 10: \textcolor{Green}{\textit{АтрибутСекции}} \textcolor{Green}{$\to$}Записываемый 11: \textcolor{Green}{\textit{АтрибутСекции}} \textcolor{Green}{$\to$}Исполняемый \\
+12: \textcolor{Green}{\textit{ТелоСекции}} \textcolor{Green}{$\to$}\textcolor{Green}{\textit{Макрос}} 13: \textcolor{Green}{\textit{ТелоСекции}} \textcolor{Green}{$\to$}\textcolor{Green}{\textit{ТелоСекции}} ТочкаЗапятая \textcolor{Green}{\textit{Макрос}} 14: \textcolor{Green}{\textit{ТелоСекции}} \textcolor{Green}{$\to$}\textcolor{Green}{\textit{ТелоСекции}} ТочкаЗапятая \textcolor{Green}{\textit{Команда}} \\
+15: \textcolor{Green}{\textit{ТелоСекции}} \textcolor{Green}{$\to$}\textcolor{Green}{\textit{ТелоСекции}} ТочкаЗапятая Ид ТочкаЗапятая 16: \textcolor{Green}{\textit{ТелоСекции}} \textcolor{Green}{$\to$}\textcolor{Green}{\textit{Команда}} 17: \textcolor{Green}{\textit{ТелоСекции}} \textcolor{Green}{$\to$}Ид ТочкаЗапятая \\
+18: \textcolor{Green}{\textit{АтрибутыСекции}} \textcolor{Green}{$\to$}\textcolor{Green}{\textit{АтрибутСекции}} 19: \textcolor{Green}{\textit{АтрибутыСекции}} \textcolor{Green}{$\to$}\textcolor{Green}{\textit{АтрибутыСекции}} \textcolor{Green}{\textit{АтрибутСекции}} 20: \textcolor{Green}{\textit{Команда}} \textcolor{Green}{$\to$}ОткрКругСкобка Ид ТочкаЗапятая ЗакрКругСкобка Вопрос \textcolor{Green}{\textit{Макрос}} \textcolor{Green}{\textit{Аргументы}} \\
+21: \textcolor{Green}{\textit{Аргументы}} \textcolor{Green}{$\to$}\textcolor{Green}{\textit{Аргументы'}} 22: \textcolor{Green}{\textit{Аргументы}} \textcolor{Green}{$\to$}Епсилон 23: \textcolor{Green}{\textit{ТелоМакроса}} \textcolor{Green}{$\to$}ОткрФигСкобка \textcolor{Green}{\textit{Команда}} ЗакрФигСкобка \\
+24: \textcolor{Green}{\textit{ТелоМакроса}} \textcolor{Green}{$\to$}ОткрФигСкобка \textcolor{Green}{\textit{ТелоМакроса}} ТочкаЗапятая \textcolor{Green}{\textit{Команда}} ЗакрФигСкобка 25: \textcolor{Green}{\textit{ТелоМакроса}} \textcolor{Green}{$\to$}ОткрФигСкобка \textcolor{Green}{\textit{ТелоМакроса}} ТочкаЗапятая Ид ТочкаЗапятая ЗакрФигСкобка 26: \textcolor{Green}{\textit{ТелоМакроса}} \textcolor{Green}{$\to$}ОткрФигСкобка Ид ТочкаЗапятая ЗакрФигСкобка \\
+27: \textcolor{Green}{\textit{Аргументы'}} \textcolor{Green}{$\to$}\textcolor{Green}{\textit{АргументыШтрих}} Зап Ид 28: \textcolor{Green}{\textit{Аргументы'}} \textcolor{Green}{$\to$}Ид  
+
+  
+Список наборов пунктов:\\
+$I_{0}$=\{\textcolor{Green}{[}\textcolor{Green}{$\mho$}\textcolor{Green}{$\to$}\textcolor{Green}{$\bullet$}\textcolor{Green}{\textit{Программа}} \textcolor{Green}{]}, \textcolor{Green}{[}\textcolor{Green}{\textit{Программа}} \textcolor{Green}{$\to$}\textcolor{Green}{$\bullet$}Формат МУР ОткрФигСкобка \textcolor{Green}{\textit{ТочкаВхода}} \textcolor{Green}{\textit{ТелоПрограммы}} ЗакрФигСкобка \textcolor{Green}{]}\}
+,\\
+$I_{1}$=\{\textcolor{Green}{[}\textcolor{Green}{$\mho$}\textcolor{Green}{$\to$}\textcolor{Green}{\textit{Программа}} \textcolor{Green}{$\bullet$}\textcolor{Green}{]}\}
+,\\
+$I_{2}$=\{\textcolor{Green}{[}\textcolor{Green}{\textit{Программа}} \textcolor{Green}{$\to$}Формат \textcolor{Green}{$\bullet$}МУР ОткрФигСкобка \textcolor{Green}{\textit{ТочкаВхода}} \textcolor{Green}{\textit{ТелоПрограммы}} ЗакрФигСкобка \textcolor{Green}{]}\}
+,\\
+$I_{3}$=\{\textcolor{Green}{[}\textcolor{Green}{\textit{Программа}} \textcolor{Green}{$\to$}Формат МУР \textcolor{Green}{$\bullet$}ОткрФигСкобка \textcolor{Green}{\textit{ТочкаВхода}} \textcolor{Green}{\textit{ТелоПрограммы}} ЗакрФигСкобка \textcolor{Green}{]}\}
+,\\
+$I_{4}$=\{\textcolor{Green}{[}\textcolor{Green}{\textit{Программа}} \textcolor{Green}{$\to$}Формат МУР ОткрФигСкобка \textcolor{Green}{$\bullet$}\textcolor{Green}{\textit{ТочкаВхода}} \textcolor{Green}{\textit{ТелоПрограммы}} ЗакрФигСкобка \textcolor{Green}{]}, \textcolor{Green}{[}\textcolor{Green}{\textit{ТочкаВхода}} \textcolor{Green}{$\to$}\textcolor{Green}{$\bullet$}Вход Ид \textcolor{Green}{]}\}
+,\\
+$I_{5}$=\{\textcolor{Green}{[}\textcolor{Green}{\textit{Программа}} \textcolor{Green}{$\to$}Формат МУР ОткрФигСкобка \textcolor{Green}{\textit{ТочкаВхода}} \textcolor{Green}{$\bullet$}\textcolor{Green}{\textit{ТелоПрограммы}} ЗакрФигСкобка \textcolor{Green}{]}, \textcolor{Green}{[}\textcolor{Green}{\textit{ТелоПрограммы}} \textcolor{Green}{$\to$}\textcolor{Green}{$\bullet$}\textcolor{Green}{\textit{ТелоПрограммы}} \textcolor{Green}{\textit{Макрос}} \textcolor{Green}{]}, \textcolor{Green}{[}\textcolor{Green}{\textit{ТелоПрограммы}} \textcolor{Green}{$\to$}\textcolor{Green}{$\bullet$}\textcolor{Green}{\textit{ТелоПрограммы}} \textcolor{Green}{\textit{Секция}} \textcolor{Green}{]}, \textcolor{Green}{[}\textcolor{Green}{\textit{ТелоПрограммы}} \textcolor{Green}{$\to$}\textcolor{Green}{$\bullet$}\textcolor{Green}{\textit{Макрос}} \textcolor{Green}{]}, \textcolor{Green}{[}\textcolor{Green}{\textit{ТелоПрограммы}} \textcolor{Green}{$\to$}\textcolor{Green}{$\bullet$}\textcolor{Green}{\textit{Секция}} \textcolor{Green}{]}, \textcolor{Green}{[}\textcolor{Green}{\textit{Макрос}} \textcolor{Green}{$\to$}\textcolor{Green}{$\bullet$}Макро Ид \textcolor{Green}{\textit{Аргументы}} ОткрФигСкобка \textcolor{Green}{\textit{ТелоМакроса}} ЗакрФигСкобка \textcolor{Green}{]}, \textcolor{Green}{[}\textcolor{Green}{\textit{Секция}} \textcolor{Green}{$\to$}\textcolor{Green}{$\bullet$}Секшон \textcolor{Green}{\textit{АтрибутыСекции}} ОткрФигСкобка \textcolor{Green}{\textit{ТелоСекции}} ЗакрФигСкобка \textcolor{Green}{]}\}
+,\\
+$I_{6}$=\{\textcolor{Green}{[}\textcolor{Green}{\textit{ТочкаВхода}} \textcolor{Green}{$\to$}Вход \textcolor{Green}{$\bullet$}Ид \textcolor{Green}{]}\}
+,\\
+$I_{7}$=\{\textcolor{Green}{[}\textcolor{Green}{\textit{Программа}} \textcolor{Green}{$\to$}Формат МУР ОткрФигСкобка \textcolor{Green}{\textit{ТочкаВхода}} \textcolor{Green}{\textit{ТелоПрограммы}} \textcolor{Green}{$\bullet$}ЗакрФигСкобка \textcolor{Green}{]}, \textcolor{Green}{[}\textcolor{Green}{\textit{ТелоПрограммы}} \textcolor{Green}{$\to$}\textcolor{Green}{\textit{ТелоПрограммы}} \textcolor{Green}{$\bullet$}\textcolor{Green}{\textit{Макрос}} \textcolor{Green}{]}, \textcolor{Green}{[}\textcolor{Green}{\textit{ТелоПрограммы}} \textcolor{Green}{$\to$}\textcolor{Green}{\textit{ТелоПрограммы}} \textcolor{Green}{$\bullet$}\textcolor{Green}{\textit{Секция}} \textcolor{Green}{]}, \textcolor{Green}{[}\textcolor{Green}{\textit{Макрос}} \textcolor{Green}{$\to$}\textcolor{Green}{$\bullet$}Макро Ид \textcolor{Green}{\textit{Аргументы}} ОткрФигСкобка \textcolor{Green}{\textit{ТелоМакроса}} ЗакрФигСкобка \textcolor{Green}{]}, \textcolor{Green}{[}\textcolor{Green}{\textit{Секция}} \textcolor{Green}{$\to$}\textcolor{Green}{$\bullet$}Секшон \textcolor{Green}{\textit{АтрибутыСекции}} ОткрФигСкобка \textcolor{Green}{\textit{ТелоСекции}} ЗакрФигСкобка \textcolor{Green}{]}\}
+,\\
+$I_{8}$=\{\textcolor{Green}{[}\textcolor{Green}{\textit{ТелоПрограммы}} \textcolor{Green}{$\to$}\textcolor{Green}{\textit{Макрос}} \textcolor{Green}{$\bullet$}\textcolor{Green}{]}\}
+,\\
+$I_{9}$=\{\textcolor{Green}{[}\textcolor{Green}{\textit{ТелоПрограммы}} \textcolor{Green}{$\to$}\textcolor{Green}{\textit{Секция}} \textcolor{Green}{$\bullet$}\textcolor{Green}{]}\}
+,\\
+$I_{10}$=\{\textcolor{Green}{[}\textcolor{Green}{\textit{Макрос}} \textcolor{Green}{$\to$}Макро \textcolor{Green}{$\bullet$}Ид \textcolor{Green}{\textit{Аргументы}} ОткрФигСкобка \textcolor{Green}{\textit{ТелоМакроса}} ЗакрФигСкобка \textcolor{Green}{]}\}
+,\\
+$I_{11}$=\{\textcolor{Green}{[}\textcolor{Green}{\textit{Секция}} \textcolor{Green}{$\to$}Секшон \textcolor{Green}{$\bullet$}\textcolor{Green}{\textit{АтрибутыСекции}} ОткрФигСкобка \textcolor{Green}{\textit{ТелоСекции}} ЗакрФигСкобка \textcolor{Green}{]}, \textcolor{Green}{[}\textcolor{Green}{\textit{АтрибутСекции}} \textcolor{Green}{$\to$}\textcolor{Green}{$\bullet$}Читаемый \textcolor{Green}{]}, \textcolor{Green}{[}\textcolor{Green}{\textit{АтрибутСекции}} \textcolor{Green}{$\to$}\textcolor{Green}{$\bullet$}Записываемый \textcolor{Green}{]}, \textcolor{Green}{[}\textcolor{Green}{\textit{АтрибутСекции}} \textcolor{Green}{$\to$}\textcolor{Green}{$\bullet$}Исполняемый \textcolor{Green}{]}, \textcolor{Green}{[}\textcolor{Green}{\textit{АтрибутыСекции}} \textcolor{Green}{$\to$}\textcolor{Green}{$\bullet$}\textcolor{Green}{\textit{АтрибутСекции}} \textcolor{Green}{]}, \textcolor{Green}{[}\textcolor{Green}{\textit{АтрибутыСекции}} \textcolor{Green}{$\to$}\textcolor{Green}{$\bullet$}\textcolor{Green}{\textit{АтрибутыСекции}} \textcolor{Green}{\textit{АтрибутСекции}} \textcolor{Green}{]}\}
+,\\
+$I_{12}$=\{\textcolor{Green}{[}\textcolor{Green}{\textit{ТочкаВхода}} \textcolor{Green}{$\to$}Вход Ид \textcolor{Green}{$\bullet$}\textcolor{Green}{]}\}
+,\\
+$I_{13}$=\{\textcolor{Green}{[}\textcolor{Green}{\textit{Программа}} \textcolor{Green}{$\to$}Формат МУР ОткрФигСкобка \textcolor{Green}{\textit{ТочкаВхода}} \textcolor{Green}{\textit{ТелоПрограммы}} ЗакрФигСкобка \textcolor{Green}{$\bullet$}\textcolor{Green}{]}\}
+,\\
+$I_{14}$=\{\textcolor{Green}{[}\textcolor{Green}{\textit{ТелоПрограммы}} \textcolor{Green}{$\to$}\textcolor{Green}{\textit{ТелоПрограммы}} \textcolor{Green}{\textit{Макрос}} \textcolor{Green}{$\bullet$}\textcolor{Green}{]}\}
+,\\
+$I_{15}$=\{\textcolor{Green}{[}\textcolor{Green}{\textit{ТелоПрограммы}} \textcolor{Green}{$\to$}\textcolor{Green}{\textit{ТелоПрограммы}} \textcolor{Green}{\textit{Секция}} \textcolor{Green}{$\bullet$}\textcolor{Green}{]}\}
+,\\
+$I_{16}$=\{\textcolor{Green}{[}\textcolor{Green}{\textit{Макрос}} \textcolor{Green}{$\to$}Макро Ид \textcolor{Green}{$\bullet$}\textcolor{Green}{\textit{Аргументы}} ОткрФигСкобка \textcolor{Green}{\textit{ТелоМакроса}} ЗакрФигСкобка \textcolor{Green}{]}, \textcolor{Green}{[}\textcolor{Green}{\textit{Аргументы}} \textcolor{Green}{$\to$}\textcolor{Green}{$\bullet$}\textcolor{Green}{\textit{Аргументы'}} \textcolor{Green}{]}, \textcolor{Green}{[}\textcolor{Green}{\textit{Аргументы}} \textcolor{Green}{$\to$}\textcolor{Green}{$\bullet$}Епсилон \textcolor{Green}{]}, \textcolor{Green}{[}\textcolor{Green}{\textit{Аргументы'}} \textcolor{Green}{$\to$}\textcolor{Green}{$\bullet$}\textcolor{Green}{\textit{АргументыШтрих}} Зап Ид \textcolor{Green}{]}, \textcolor{Green}{[}\textcolor{Green}{\textit{Аргументы'}} \textcolor{Green}{$\to$}\textcolor{Green}{$\bullet$}Ид \textcolor{Green}{]}\}
+,\\
+$I_{17}$=\{\textcolor{Green}{[}\textcolor{Green}{\textit{Секция}} \textcolor{Green}{$\to$}Секшон \textcolor{Green}{\textit{АтрибутыСекции}} \textcolor{Green}{$\bullet$}ОткрФигСкобка \textcolor{Green}{\textit{ТелоСекции}} ЗакрФигСкобка \textcolor{Green}{]}, \textcolor{Green}{[}\textcolor{Green}{\textit{АтрибутСекции}} \textcolor{Green}{$\to$}\textcolor{Green}{$\bullet$}Читаемый \textcolor{Green}{]}, \textcolor{Green}{[}\textcolor{Green}{\textit{АтрибутСекции}} \textcolor{Green}{$\to$}\textcolor{Green}{$\bullet$}Записываемый \textcolor{Green}{]}, \textcolor{Green}{[}\textcolor{Green}{\textit{АтрибутСекции}} \textcolor{Green}{$\to$}\textcolor{Green}{$\bullet$}Исполняемый \textcolor{Green}{]}, \textcolor{Green}{[}\textcolor{Green}{\textit{АтрибутыСекции}} \textcolor{Green}{$\to$}\textcolor{Green}{\textit{АтрибутыСекции}} \textcolor{Green}{$\bullet$}\textcolor{Green}{\textit{АтрибутСекции}} \textcolor{Green}{]}\}
+,\\
+$I_{18}$=\{\textcolor{Green}{[}\textcolor{Green}{\textit{АтрибутСекции}} \textcolor{Green}{$\to$}Читаемый \textcolor{Green}{$\bullet$}\textcolor{Green}{]}\}
+,\\
+$I_{19}$=\{\textcolor{Green}{[}\textcolor{Green}{\textit{АтрибутСекции}} \textcolor{Green}{$\to$}Записываемый \textcolor{Green}{$\bullet$}\textcolor{Green}{]}\}
+,\\
+$I_{20}$=\{\textcolor{Green}{[}\textcolor{Green}{\textit{АтрибутСекции}} \textcolor{Green}{$\to$}Исполняемый \textcolor{Green}{$\bullet$}\textcolor{Green}{]}\}
+,\\
+$I_{21}$=\{\textcolor{Green}{[}\textcolor{Green}{\textit{АтрибутыСекции}} \textcolor{Green}{$\to$}\textcolor{Green}{\textit{АтрибутСекции}} \textcolor{Green}{$\bullet$}\textcolor{Green}{]}\}
+,\\
+$I_{22}$=\{\textcolor{Green}{[}\textcolor{Green}{\textit{Макрос}} \textcolor{Green}{$\to$}Макро Ид \textcolor{Green}{\textit{Аргументы}} \textcolor{Green}{$\bullet$}ОткрФигСкобка \textcolor{Green}{\textit{ТелоМакроса}} ЗакрФигСкобка \textcolor{Green}{]}\}
+,\\
+$I_{23}$=\{\textcolor{Green}{[}\textcolor{Green}{\textit{Аргументы}} \textcolor{Green}{$\to$}\textcolor{Green}{\textit{Аргументы'}} \textcolor{Green}{$\bullet$}\textcolor{Green}{]}\}
+,\\
+$I_{24}$=\{\textcolor{Green}{[}\textcolor{Green}{\textit{Аргументы}} \textcolor{Green}{$\to$}Епсилон \textcolor{Green}{$\bullet$}\textcolor{Green}{]}\}
+,\\
+$I_{25}$=\{\textcolor{Green}{[}\textcolor{Green}{\textit{Аргументы'}} \textcolor{Green}{$\to$}\textcolor{Green}{\textit{АргументыШтрих}} \textcolor{Green}{$\bullet$}Зап Ид \textcolor{Green}{]}\}
+,\\
+$I_{26}$=\{\textcolor{Green}{[}\textcolor{Green}{\textit{Аргументы'}} \textcolor{Green}{$\to$}Ид \textcolor{Green}{$\bullet$}\textcolor{Green}{]}\}
+,\\
+$I_{27}$=\{\textcolor{Green}{[}\textcolor{Green}{\textit{Макрос}} \textcolor{Green}{$\to$}\textcolor{Green}{$\bullet$}Макро Ид \textcolor{Green}{\textit{Аргументы}} ОткрФигСкобка \textcolor{Green}{\textit{ТелоМакроса}} ЗакрФигСкобка \textcolor{Green}{]}, \textcolor{Green}{[}\textcolor{Green}{\textit{Секция}} \textcolor{Green}{$\to$}Секшон \textcolor{Green}{\textit{АтрибутыСекции}} ОткрФигСкобка \textcolor{Green}{$\bullet$}\textcolor{Green}{\textit{ТелоСекции}} ЗакрФигСкобка \textcolor{Green}{]}, \textcolor{Green}{[}\textcolor{Green}{\textit{ТелоСекции}} \textcolor{Green}{$\to$}\textcolor{Green}{$\bullet$}\textcolor{Green}{\textit{Макрос}} \textcolor{Green}{]}, \textcolor{Green}{[}\textcolor{Green}{\textit{ТелоСекции}} \textcolor{Green}{$\to$}\textcolor{Green}{$\bullet$}\textcolor{Green}{\textit{ТелоСекции}} ТочкаЗапятая \textcolor{Green}{\textit{Макрос}} \textcolor{Green}{]}, \textcolor{Green}{[}\textcolor{Green}{\textit{ТелоСекции}} \textcolor{Green}{$\to$}\textcolor{Green}{$\bullet$}\textcolor{Green}{\textit{ТелоСекции}} ТочкаЗапятая \textcolor{Green}{\textit{Команда}} \textcolor{Green}{]}, \textcolor{Green}{[}\textcolor{Green}{\textit{ТелоСекции}} \textcolor{Green}{$\to$}\textcolor{Green}{$\bullet$}\textcolor{Green}{\textit{ТелоСекции}} ТочкаЗапятая Ид ТочкаЗапятая \textcolor{Green}{]}, \textcolor{Green}{[}\textcolor{Green}{\textit{ТелоСекции}} \textcolor{Green}{$\to$}\textcolor{Green}{$\bullet$}\textcolor{Green}{\textit{Команда}} \textcolor{Green}{]}, \textcolor{Green}{[}\textcolor{Green}{\textit{ТелоСекции}} \textcolor{Green}{$\to$}\textcolor{Green}{$\bullet$}Ид ТочкаЗапятая \textcolor{Green}{]}, \textcolor{Green}{[}\textcolor{Green}{\textit{Команда}} \textcolor{Green}{$\to$}\textcolor{Green}{$\bullet$}ОткрКругСкобка Ид ТочкаЗапятая ЗакрКругСкобка Вопрос \textcolor{Green}{\textit{Макрос}} \textcolor{Green}{\textit{Аргументы}} \textcolor{Green}{]}\}
+,\\
+$I_{28}$=\{\textcolor{Green}{[}\textcolor{Green}{\textit{АтрибутыСекции}} \textcolor{Green}{$\to$}\textcolor{Green}{\textit{АтрибутыСекции}} \textcolor{Green}{\textit{АтрибутСекции}} \textcolor{Green}{$\bullet$}\textcolor{Green}{]}\}
+,\\
+$I_{29}$=\{\textcolor{Green}{[}\textcolor{Green}{\textit{Секция}} \textcolor{Green}{$\to$}Секшон \textcolor{Green}{\textit{АтрибутыСекции}} ОткрФигСкобка \textcolor{Green}{\textit{ТелоСекции}} \textcolor{Green}{$\bullet$}ЗакрФигСкобка \textcolor{Green}{]}, \textcolor{Green}{[}\textcolor{Green}{\textit{ТелоСекции}} \textcolor{Green}{$\to$}\textcolor{Green}{\textit{ТелоСекции}} \textcolor{Green}{$\bullet$}ТочкаЗапятая \textcolor{Green}{\textit{Макрос}} \textcolor{Green}{]}, \textcolor{Green}{[}\textcolor{Green}{\textit{ТелоСекции}} \textcolor{Green}{$\to$}\textcolor{Green}{\textit{ТелоСекции}} \textcolor{Green}{$\bullet$}ТочкаЗапятая \textcolor{Green}{\textit{Команда}} \textcolor{Green}{]}, \textcolor{Green}{[}\textcolor{Green}{\textit{ТелоСекции}} \textcolor{Green}{$\to$}\textcolor{Green}{\textit{ТелоСекции}} \textcolor{Green}{$\bullet$}ТочкаЗапятая Ид ТочкаЗапятая \textcolor{Green}{]}\}
+,\\
+$I_{30}$=\{\textcolor{Green}{[}\textcolor{Green}{\textit{ТелоСекции}} \textcolor{Green}{$\to$}\textcolor{Green}{\textit{Макрос}} \textcolor{Green}{$\bullet$}\textcolor{Green}{]}\}
+,\\
+$I_{31}$=\{\textcolor{Green}{[}\textcolor{Green}{\textit{ТелоСекции}} \textcolor{Green}{$\to$}\textcolor{Green}{\textit{Команда}} \textcolor{Green}{$\bullet$}\textcolor{Green}{]}\}
+,\\
+$I_{32}$=\{\textcolor{Green}{[}\textcolor{Green}{\textit{ТелоСекции}} \textcolor{Green}{$\to$}Ид \textcolor{Green}{$\bullet$}ТочкаЗапятая \textcolor{Green}{]}\}
+,\\
+$I_{33}$=\{\textcolor{Green}{[}\textcolor{Green}{\textit{Команда}} \textcolor{Green}{$\to$}ОткрКругСкобка \textcolor{Green}{$\bullet$}Ид ТочкаЗапятая ЗакрКругСкобка Вопрос \textcolor{Green}{\textit{Макрос}} \textcolor{Green}{\textit{Аргументы}} \textcolor{Green}{]}\}
+,\\
+$I_{34}$=\{\textcolor{Green}{[}\textcolor{Green}{\textit{Макрос}} \textcolor{Green}{$\to$}Макро Ид \textcolor{Green}{\textit{Аргументы}} ОткрФигСкобка \textcolor{Green}{$\bullet$}\textcolor{Green}{\textit{ТелоМакроса}} ЗакрФигСкобка \textcolor{Green}{]}, \textcolor{Green}{[}\textcolor{Green}{\textit{ТелоМакроса}} \textcolor{Green}{$\to$}\textcolor{Green}{$\bullet$}ОткрФигСкобка \textcolor{Green}{\textit{Команда}} ЗакрФигСкобка \textcolor{Green}{]}, \textcolor{Green}{[}\textcolor{Green}{\textit{ТелоМакроса}} \textcolor{Green}{$\to$}\textcolor{Green}{$\bullet$}ОткрФигСкобка \textcolor{Green}{\textit{ТелоМакроса}} ТочкаЗапятая \textcolor{Green}{\textit{Команда}} ЗакрФигСкобка \textcolor{Green}{]}, \textcolor{Green}{[}\textcolor{Green}{\textit{ТелоМакроса}} \textcolor{Green}{$\to$}\textcolor{Green}{$\bullet$}ОткрФигСкобка \textcolor{Green}{\textit{ТелоМакроса}} ТочкаЗапятая Ид ТочкаЗапятая ЗакрФигСкобка \textcolor{Green}{]}, \textcolor{Green}{[}\textcolor{Green}{\textit{ТелоМакроса}} \textcolor{Green}{$\to$}\textcolor{Green}{$\bullet$}ОткрФигСкобка Ид ТочкаЗапятая ЗакрФигСкобка \textcolor{Green}{]}\}
+,\\
+$I_{35}$=\{\textcolor{Green}{[}\textcolor{Green}{\textit{Аргументы'}} \textcolor{Green}{$\to$}\textcolor{Green}{\textit{АргументыШтрих}} Зап \textcolor{Green}{$\bullet$}Ид \textcolor{Green}{]}\}
+,\\
+$I_{36}$=\{\textcolor{Green}{[}\textcolor{Green}{\textit{Макрос}} \textcolor{Green}{$\to$}Макро Ид \textcolor{Green}{\textit{Аргументы}} ОткрФигСкобка \textcolor{Green}{\textit{ТелоМакроса}} \textcolor{Green}{$\bullet$}ЗакрФигСкобка \textcolor{Green}{]}\}
+,\\
+$I_{37}$=\{\textcolor{Green}{[}\textcolor{Green}{\textit{Команда}} \textcolor{Green}{$\to$}\textcolor{Green}{$\bullet$}ОткрКругСкобка Ид ТочкаЗапятая ЗакрКругСкобка Вопрос \textcolor{Green}{\textit{Макрос}} \textcolor{Green}{\textit{Аргументы}} \textcolor{Green}{]}, \textcolor{Green}{[}\textcolor{Green}{\textit{ТелоМакроса}} \textcolor{Green}{$\to$}\textcolor{Green}{$\bullet$}ОткрФигСкобка \textcolor{Green}{\textit{Команда}} ЗакрФигСкобка \textcolor{Green}{]}, \textcolor{Green}{[}\textcolor{Green}{\textit{ТелоМакроса}} \textcolor{Green}{$\to$}\textcolor{Green}{$\bullet$}ОткрФигСкобка \textcolor{Green}{\textit{ТелоМакроса}} ТочкаЗапятая \textcolor{Green}{\textit{Команда}} ЗакрФигСкобка \textcolor{Green}{]}, \textcolor{Green}{[}\textcolor{Green}{\textit{ТелоМакроса}} \textcolor{Green}{$\to$}\textcolor{Green}{$\bullet$}ОткрФигСкобка \textcolor{Green}{\textit{ТелоМакроса}} ТочкаЗапятая Ид ТочкаЗапятая ЗакрФигСкобка \textcolor{Green}{]}, \textcolor{Green}{[}\textcolor{Green}{\textit{ТелоМакроса}} \textcolor{Green}{$\to$}\textcolor{Green}{$\bullet$}ОткрФигСкобка Ид ТочкаЗапятая ЗакрФигСкобка \textcolor{Green}{]}, \textcolor{Green}{[}\textcolor{Green}{\textit{ТелоМакроса}} \textcolor{Green}{$\to$}ОткрФигСкобка \textcolor{Green}{$\bullet$}\textcolor{Green}{\textit{Команда}} ЗакрФигСкобка \textcolor{Green}{]}, \textcolor{Green}{[}\textcolor{Green}{\textit{ТелоМакроса}} \textcolor{Green}{$\to$}ОткрФигСкобка \textcolor{Green}{$\bullet$}\textcolor{Green}{\textit{ТелоМакроса}} ТочкаЗапятая \textcolor{Green}{\textit{Команда}} ЗакрФигСкобка \textcolor{Green}{]}, \textcolor{Green}{[}\textcolor{Green}{\textit{ТелоМакроса}} \textcolor{Green}{$\to$}ОткрФигСкобка \textcolor{Green}{$\bullet$}\textcolor{Green}{\textit{ТелоМакроса}} ТочкаЗапятая Ид ТочкаЗапятая ЗакрФигСкобка \textcolor{Green}{]}, \textcolor{Green}{[}\textcolor{Green}{\textit{ТелоМакроса}} \textcolor{Green}{$\to$}ОткрФигСкобка \textcolor{Green}{$\bullet$}Ид ТочкаЗапятая ЗакрФигСкобка \textcolor{Green}{]}\}
+,\\
+$I_{38}$=\{\textcolor{Green}{[}\textcolor{Green}{\textit{Секция}} \textcolor{Green}{$\to$}Секшон \textcolor{Green}{\textit{АтрибутыСекции}} ОткрФигСкобка \textcolor{Green}{\textit{ТелоСекции}} ЗакрФигСкобка \textcolor{Green}{$\bullet$}\textcolor{Green}{]}\}
+,\\
+$I_{39}$=\{\textcolor{Green}{[}\textcolor{Green}{\textit{Макрос}} \textcolor{Green}{$\to$}\textcolor{Green}{$\bullet$}Макро Ид \textcolor{Green}{\textit{Аргументы}} ОткрФигСкобка \textcolor{Green}{\textit{ТелоМакроса}} ЗакрФигСкобка \textcolor{Green}{]}, \textcolor{Green}{[}\textcolor{Green}{\textit{ТелоСекции}} \textcolor{Green}{$\to$}\textcolor{Green}{\textit{ТелоСекции}} ТочкаЗапятая \textcolor{Green}{$\bullet$}\textcolor{Green}{\textit{Макрос}} \textcolor{Green}{]}, \textcolor{Green}{[}\textcolor{Green}{\textit{ТелоСекции}} \textcolor{Green}{$\to$}\textcolor{Green}{\textit{ТелоСекции}} ТочкаЗапятая \textcolor{Green}{$\bullet$}\textcolor{Green}{\textit{Команда}} \textcolor{Green}{]}, \textcolor{Green}{[}\textcolor{Green}{\textit{ТелоСекции}} \textcolor{Green}{$\to$}\textcolor{Green}{\textit{ТелоСекции}} ТочкаЗапятая \textcolor{Green}{$\bullet$}Ид ТочкаЗапятая \textcolor{Green}{]}, \textcolor{Green}{[}\textcolor{Green}{\textit{Команда}} \textcolor{Green}{$\to$}\textcolor{Green}{$\bullet$}ОткрКругСкобка Ид ТочкаЗапятая ЗакрКругСкобка Вопрос \textcolor{Green}{\textit{Макрос}} \textcolor{Green}{\textit{Аргументы}} \textcolor{Green}{]}\}
+,\\
+$I_{40}$=\{\textcolor{Green}{[}\textcolor{Green}{\textit{ТелоСекции}} \textcolor{Green}{$\to$}Ид ТочкаЗапятая \textcolor{Green}{$\bullet$}\textcolor{Green}{]}\}
+,\\
+$I_{41}$=\{\textcolor{Green}{[}\textcolor{Green}{\textit{Команда}} \textcolor{Green}{$\to$}ОткрКругСкобка Ид \textcolor{Green}{$\bullet$}ТочкаЗапятая ЗакрКругСкобка Вопрос \textcolor{Green}{\textit{Макрос}} \textcolor{Green}{\textit{Аргументы}} \textcolor{Green}{]}\}
+,\\
+$I_{42}$=\{\textcolor{Green}{[}\textcolor{Green}{\textit{Аргументы'}} \textcolor{Green}{$\to$}\textcolor{Green}{\textit{АргументыШтрих}} Зап Ид \textcolor{Green}{$\bullet$}\textcolor{Green}{]}\}
+,\\
+$I_{43}$=\{\textcolor{Green}{[}\textcolor{Green}{\textit{ТелоСекции}} \textcolor{Green}{$\to$}\textcolor{Green}{\textit{ТелоСекции}} ТочкаЗапятая \textcolor{Green}{\textit{Макрос}} \textcolor{Green}{$\bullet$}\textcolor{Green}{]}\}
+,\\
+$I_{44}$=\{\textcolor{Green}{[}\textcolor{Green}{\textit{ТелоСекции}} \textcolor{Green}{$\to$}\textcolor{Green}{\textit{ТелоСекции}} ТочкаЗапятая \textcolor{Green}{\textit{Команда}} \textcolor{Green}{$\bullet$}\textcolor{Green}{]}\}
+,\\
+$I_{45}$=\{\textcolor{Green}{[}\textcolor{Green}{\textit{ТелоСекции}} \textcolor{Green}{$\to$}\textcolor{Green}{\textit{ТелоСекции}} ТочкаЗапятая Ид \textcolor{Green}{$\bullet$}ТочкаЗапятая \textcolor{Green}{]}\}
+,\\
+$I_{46}$=\{\textcolor{Green}{[}\textcolor{Green}{\textit{Макрос}} \textcolor{Green}{$\to$}Макро Ид \textcolor{Green}{\textit{Аргументы}} ОткрФигСкобка \textcolor{Green}{\textit{ТелоМакроса}} ЗакрФигСкобка \textcolor{Green}{$\bullet$}\textcolor{Green}{]}\}
+,\\
+$I_{47}$=\{\textcolor{Green}{[}\textcolor{Green}{\textit{ТелоМакроса}} \textcolor{Green}{$\to$}ОткрФигСкобка \textcolor{Green}{\textit{Команда}} \textcolor{Green}{$\bullet$}ЗакрФигСкобка \textcolor{Green}{]}\}
+,\\
+$I_{48}$=\{\textcolor{Green}{[}\textcolor{Green}{\textit{ТелоМакроса}} \textcolor{Green}{$\to$}ОткрФигСкобка \textcolor{Green}{\textit{ТелоМакроса}} \textcolor{Green}{$\bullet$}ТочкаЗапятая \textcolor{Green}{\textit{Команда}} ЗакрФигСкобка \textcolor{Green}{]}, \textcolor{Green}{[}\textcolor{Green}{\textit{ТелоМакроса}} \textcolor{Green}{$\to$}ОткрФигСкобка \textcolor{Green}{\textit{ТелоМакроса}} \textcolor{Green}{$\bullet$}ТочкаЗапятая Ид ТочкаЗапятая ЗакрФигСкобка \textcolor{Green}{]}\}
+,\\
+$I_{49}$=\{\textcolor{Green}{[}\textcolor{Green}{\textit{ТелоМакроса}} \textcolor{Green}{$\to$}ОткрФигСкобка Ид \textcolor{Green}{$\bullet$}ТочкаЗапятая ЗакрФигСкобка \textcolor{Green}{]}\}
+,\\
+$I_{50}$=\{\textcolor{Green}{[}\textcolor{Green}{\textit{Команда}} \textcolor{Green}{$\to$}ОткрКругСкобка Ид ТочкаЗапятая \textcolor{Green}{$\bullet$}ЗакрКругСкобка Вопрос \textcolor{Green}{\textit{Макрос}} \textcolor{Green}{\textit{Аргументы}} \textcolor{Green}{]}\}
+,\\
+$I_{51}$=\{\textcolor{Green}{[}\textcolor{Green}{\textit{ТелоСекции}} \textcolor{Green}{$\to$}\textcolor{Green}{\textit{ТелоСекции}} ТочкаЗапятая Ид ТочкаЗапятая \textcolor{Green}{$\bullet$}\textcolor{Green}{]}\}
+,\\
+$I_{52}$=\{\textcolor{Green}{[}\textcolor{Green}{\textit{Команда}} \textcolor{Green}{$\to$}ОткрКругСкобка Ид ТочкаЗапятая ЗакрКругСкобка \textcolor{Green}{$\bullet$}Вопрос \textcolor{Green}{\textit{Макрос}} \textcolor{Green}{\textit{Аргументы}} \textcolor{Green}{]}\}
+,\\
+$I_{53}$=\{\textcolor{Green}{[}\textcolor{Green}{\textit{ТелоМакроса}} \textcolor{Green}{$\to$}ОткрФигСкобка \textcolor{Green}{\textit{Команда}} ЗакрФигСкобка \textcolor{Green}{$\bullet$}\textcolor{Green}{]}\}
+,\\
+$I_{54}$=\{\textcolor{Green}{[}\textcolor{Green}{\textit{Команда}} \textcolor{Green}{$\to$}\textcolor{Green}{$\bullet$}ОткрКругСкобка Ид ТочкаЗапятая ЗакрКругСкобка Вопрос \textcolor{Green}{\textit{Макрос}} \textcolor{Green}{\textit{Аргументы}} \textcolor{Green}{]}, \textcolor{Green}{[}\textcolor{Green}{\textit{ТелоМакроса}} \textcolor{Green}{$\to$}ОткрФигСкобка \textcolor{Green}{\textit{ТелоМакроса}} ТочкаЗапятая \textcolor{Green}{$\bullet$}\textcolor{Green}{\textit{Команда}} ЗакрФигСкобка \textcolor{Green}{]}, \textcolor{Green}{[}\textcolor{Green}{\textit{ТелоМакроса}} \textcolor{Green}{$\to$}ОткрФигСкобка \textcolor{Green}{\textit{ТелоМакроса}} ТочкаЗапятая \textcolor{Green}{$\bullet$}Ид ТочкаЗапятая ЗакрФигСкобка \textcolor{Green}{]}\}
+,\\
+$I_{55}$=\{\textcolor{Green}{[}\textcolor{Green}{\textit{ТелоМакроса}} \textcolor{Green}{$\to$}ОткрФигСкобка Ид ТочкаЗапятая \textcolor{Green}{$\bullet$}ЗакрФигСкобка \textcolor{Green}{]}\}
+,\\
+$I_{56}$=\{\textcolor{Green}{[}\textcolor{Green}{\textit{ТелоМакроса}} \textcolor{Green}{$\to$}ОткрФигСкобка \textcolor{Green}{\textit{ТелоМакроса}} ТочкаЗапятая \textcolor{Green}{\textit{Команда}} \textcolor{Green}{$\bullet$}ЗакрФигСкобка \textcolor{Green}{]}\}
+,\\
+$I_{57}$=\{\textcolor{Green}{[}\textcolor{Green}{\textit{ТелоМакроса}} \textcolor{Green}{$\to$}ОткрФигСкобка \textcolor{Green}{\textit{ТелоМакроса}} ТочкаЗапятая Ид \textcolor{Green}{$\bullet$}ТочкаЗапятая ЗакрФигСкобка \textcolor{Green}{]}\}
+,\\
+$I_{58}$=\{\textcolor{Green}{[}\textcolor{Green}{\textit{Макрос}} \textcolor{Green}{$\to$}\textcolor{Green}{$\bullet$}Макро Ид \textcolor{Green}{\textit{Аргументы}} ОткрФигСкобка \textcolor{Green}{\textit{ТелоМакроса}} ЗакрФигСкобка \textcolor{Green}{]}, \textcolor{Green}{[}\textcolor{Green}{\textit{Команда}} \textcolor{Green}{$\to$}ОткрКругСкобка Ид ТочкаЗапятая ЗакрКругСкобка Вопрос \textcolor{Green}{$\bullet$}\textcolor{Green}{\textit{Макрос}} \textcolor{Green}{\textit{Аргументы}} \textcolor{Green}{]}\}
+,\\
+$I_{59}$=\{\textcolor{Green}{[}\textcolor{Green}{\textit{ТелоМакроса}} \textcolor{Green}{$\to$}ОткрФигСкобка Ид ТочкаЗапятая ЗакрФигСкобка \textcolor{Green}{$\bullet$}\textcolor{Green}{]}\}
+,\\
+$I_{60}$=\{\textcolor{Green}{[}\textcolor{Green}{\textit{Команда}} \textcolor{Green}{$\to$}ОткрКругСкобка Ид ТочкаЗапятая ЗакрКругСкобка Вопрос \textcolor{Green}{\textit{Макрос}} \textcolor{Green}{$\bullet$}\textcolor{Green}{\textit{Аргументы}} \textcolor{Green}{]}, \textcolor{Green}{[}\textcolor{Green}{\textit{Аргументы}} \textcolor{Green}{$\to$}\textcolor{Green}{$\bullet$}\textcolor{Green}{\textit{Аргументы'}} \textcolor{Green}{]}, \textcolor{Green}{[}\textcolor{Green}{\textit{Аргументы}} \textcolor{Green}{$\to$}\textcolor{Green}{$\bullet$}Епсилон \textcolor{Green}{]}, \textcolor{Green}{[}\textcolor{Green}{\textit{Аргументы'}} \textcolor{Green}{$\to$}\textcolor{Green}{$\bullet$}\textcolor{Green}{\textit{АргументыШтрих}} Зап Ид \textcolor{Green}{]}, \textcolor{Green}{[}\textcolor{Green}{\textit{Аргументы'}} \textcolor{Green}{$\to$}\textcolor{Green}{$\bullet$}Ид \textcolor{Green}{]}\}
+,\\
+$I_{61}$=\{\textcolor{Green}{[}\textcolor{Green}{\textit{ТелоМакроса}} \textcolor{Green}{$\to$}ОткрФигСкобка \textcolor{Green}{\textit{ТелоМакроса}} ТочкаЗапятая \textcolor{Green}{\textit{Команда}} ЗакрФигСкобка \textcolor{Green}{$\bullet$}\textcolor{Green}{]}\}
+,\\
+$I_{62}$=\{\textcolor{Green}{[}\textcolor{Green}{\textit{ТелоМакроса}} \textcolor{Green}{$\to$}ОткрФигСкобка \textcolor{Green}{\textit{ТелоМакроса}} ТочкаЗапятая Ид ТочкаЗапятая \textcolor{Green}{$\bullet$}ЗакрФигСкобка \textcolor{Green}{]}\}
+,\\
+$I_{63}$=\{\textcolor{Green}{[}\textcolor{Green}{\textit{Команда}} \textcolor{Green}{$\to$}ОткрКругСкобка Ид ТочкаЗапятая ЗакрКругСкобка Вопрос \textcolor{Green}{\textit{Макрос}} \textcolor{Green}{\textit{Аргументы}} \textcolor{Green}{$\bullet$}\textcolor{Green}{]}\}
+,\\
+$I_{64}$=\{\textcolor{Green}{[}\textcolor{Green}{\textit{ТелоМакроса}} \textcolor{Green}{$\to$}ОткрФигСкобка \textcolor{Green}{\textit{ТелоМакроса}} ТочкаЗапятая Ид ТочкаЗапятая ЗакрФигСкобка \textcolor{Green}{$\bullet$}\textcolor{Green}{]}\}
+
+\end{document}
