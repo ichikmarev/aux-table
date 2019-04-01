@@ -29,12 +29,12 @@ version :: Version
 version = Version [0,1,0,0] []
 bindir, libdir, dynlibdir, datadir, libexecdir, sysconfdir :: FilePath
 
-bindir     = "/Users/thesoulofthetime/.cabal/bin"
-libdir     = "/Users/thesoulofthetime/.cabal/lib/x86_64-osx-ghc-8.4.3/Ark-0.1.0.0-AhDAYoPFdZo1dR2kQJBDJl-Ark"
-dynlibdir  = "/Users/thesoulofthetime/.cabal/lib/x86_64-osx-ghc-8.4.3"
-datadir    = "/Users/thesoulofthetime/.cabal/share/x86_64-osx-ghc-8.4.3/Ark-0.1.0.0"
-libexecdir = "/Users/thesoulofthetime/.cabal/libexec/x86_64-osx-ghc-8.4.3/Ark-0.1.0.0"
-sysconfdir = "/Users/thesoulofthetime/.cabal/etc"
+bindir     = "/Users/ichikmarev/Library/Haskell/bin"
+libdir     = "/Users/ichikmarev/Library/Haskell/ghc-8.6.3-x86_64/lib/Ark-0.1.0.0"
+dynlibdir  = "/Users/ichikmarev/Library/Haskell/ghc-8.6.3-x86_64/lib/x86_64-osx-ghc-8.6.3"
+datadir    = "/Users/ichikmarev/Library/Haskell/share/ghc-8.6.3-x86_64/Ark-0.1.0.0"
+libexecdir = "/Users/ichikmarev/Library/Haskell/libexec/x86_64-osx-ghc-8.6.3/Ark-0.1.0.0"
+sysconfdir = "/Users/ichikmarev/Library/Haskell/etc"
 
 getBinDir, getLibDir, getDynLibDir, getDataDir, getLibexecDir, getSysconfDir :: IO FilePath
 getBinDir = catchIO (getEnv "Ark_bindir") (\_ -> return bindir)
