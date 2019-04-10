@@ -8,76 +8,52 @@
 
 import Rules
 
--- data ЦелочисленныеКомандыПересылки =
---    Mov   | Movu   | Movs   |
---    Mov8u | Mov16u | Mov32u | Mov64u |
---    Mov8s | Mov16s | Mov32s | Mov64s |
---    Mov8  | Mov16  | Mov32  | Mov64  |
---    Push  | Pop
--- data ЦелочисленныеАрифметическиеКоманды =
---   Addi     | Subi     | Muliu | Mulis |
---   Diviu    | Divis    | Modiu | Modis |
---   Divmodiu | Divmodis |
---   Cmpiu    | Cmpis
--- data ЦелочисленныеПоразрядныеОперации =
---   And    | Or     | Xor     |
---   Andn   | Orn    | Xorn    |
---   Lshift | Rshift | Rshifts |
---   Not
--- data ВещественныеКомандыПересылки =
---   Mov  | Mov32f | Mov64f | Mov80 |
---   Fld1 | Fldz   |
---   Push | Pop    |
--- data ВещественныеАрифметическиеКоманды =
---   Addf    | Subf   | Mulf   | Divf   |
---   Cmpf    |
---   Roundn  | Roundl | Roundg | Roundt |
---   Frac    | Absf   | Mul2f  | Chsf
--- data КомандыПередачиУправления =
---   Jmp  | Jmpr  | Jmpcc  | Jmpccr  |
---   Call | Callr | Callcc | Callccr |
---   Ret  | Retcc | Reta   | Retacc  |
---   Trap | Reti
---
--- data Аргументы =
---   Reg   | Reg1  | Reg2  | Reg3  | Reg4   |
---   Imm10 | Imm20 | Imm15 |
---   Mem8  | Mem16 | Mem32 | Mem64 | Mem128
+--ЧелослиленныйРегистр(Ринт)
+--ВещественныйРегистр(Финт)
+--СП
+--БП(стек)
+--Movim
+--Loadreg
+--Storereg
+--PushPopIm
+--Arifm3Args до ршифта + сравнения
+--MovRegF
+--StoreRegF
+--LoadRegF
+--Pup
+--Arifm3F
+--Arifm2F + chsf
+--Mul2f
+--JumpReg1
+--JumprReg2
+--JumpCC
+--JumorCCReg
+--CallRel
+--CellCon
+--Ret + Reti
+--Reta
+--RetaCon
 
 data ТерминалыАрконы =
-   Скобка         | Или           | НачБлока      | КонецБлока     | Ид             | Формат         |
-   ТочкаЗапятая   | Читаемый      | Записываемый  | Исполняемый    | Вход           |
-   Макро          | Эпсилон       | Зап           | ОткрКругСкобка | ЗакрКругСкобка | ОткрФигСкобка  |
-   ЗакрФигСкобка  | Вопрос        | МУР           | Section        |
-   Mov            | Movu          | Movs          |
-   Mov8u          | Mov16u        | Mov32u        | Mov64u         |
-   Mov8s          | Mov16s        | Mov32s        | Mov64s         |
-   Mov8           | Mov16         | Mov32         | Mov64          |
-   Push           | Pop           |
-   ЦелочислАрифмОперации          |
-   Divmodiu       | Divmodis      |
-   Cmpiu          | Cmpis         |
-   ЦелочислПорязрядОперации       |
-   Mov32f         | Mov64f        | Mov80         |
-   Fld1           | Fldz          |
-   Addf           | Subf          | Mulf          | Divf           |
-   Cmpf           |
-   Roundn         | Roundl        | Roundg        | Roundt         |
-   Frac           | Absf          | Mul2f         | Chsf           |
-   Jmp            | Jmpr          | Jmpcc         | Jmpccr         |
-   Call           | Callr         | Callcc        | Callccr        |
-   Ret            | Retcc         | Reta          | Retacc         |
-   Trap           | Reti          |
-   Reg            | Reg1          | Reg2          | Reg3           | Reg4           |
-   Imm10          | Imm20         | Imm15         |
-   Mem8           | Mem16         | Mem32         | Mem64          | Mem128         |
-   RegI           | RegJ
+  RInt        | FInt          | SP         | BP         | Movim     |
+  LoadReg     | StoreReg      | PushPopIm  | Arifm3Args | MovRegF   |
+  StoreRegF   | LoadRegF      | Pup        | Arifm3F    | Arifm2F   |
+  Mul2f       | JumpReg1      | JumprReg2  | JumpCC     | JumpCCReg |
+  CallRel     | CellCon       | Ret        | Reta       | RetaCon   |
+  OpenBracket | CloseBracket  | StartBlock | EndBlock   | Id        |
+  Semicolon   | Readable      | Writable   | Executable | Enter     |
+  Macro       | Epsilon       | Comma      | OpenBrace  | CloseBrace|
+  Prescision  | Pluse         | Minus      | Mul        | Div       |
+  Mod         | Xor           | Or         | Add        | Not       |
+  Single      | Double        | Quatro     | Extended   | Integer   |
+  ExpSign
+
+
  deriving(Eq,Show,Ord,Read,Enum,Bounded)
 
 data НетерминалыАрконы =
-  Программа      | ТочкаВхода  | ТелоПрограммы  | Макрос    | Секция         |
-  АтрибутСекции  | ТелоСекции  | АтрибутыСекции | Аргументы |
-  ТелоМакроса    | Аргументы'  | Команда
+  Programm       | EntryPoint  | Body     | Section         |
+  Attr           | Args 
  deriving(Eq,Show,Ord,Read,Enum,Bounded)
 
 грамматикаАрконы :: [Правило НетерминалыАрконы ТерминалыАрконы]
@@ -106,19 +82,6 @@ data НетерминалыАрконы =
     Аргументы --> [Нетерминал Аргументы'],
     Аргументы' --> [Терминал Ид],
     Аргументы' --> [Нетерминал Аргументы', Терминал Зап, Терминал Ид],
-    Аргументы --> [Терминал Reg1],
-    Аргументы --> [Терминал Reg2],
-    Аргументы --> [Терминал Reg3],
-    Аргументы --> [Терминал Reg4],
-    Аргументы --> [Терминал Reg],
-    Аргументы --> [Терминал Imm10],
-    Аргументы --> [Терминал Imm15],
-    Аргументы --> [Терминал Imm20],
-    Аргументы --> [Терминал Mem8],
-    Аргументы --> [Терминал Mem16],
-    Аргументы --> [Терминал Mem32],
-    Аргументы --> [Терминал Mem64],
-    Аргументы --> [Терминал Mem128],
     ТелоМакроса --> [Терминал ОткрФигСкобка, Нетерминал Команда, Терминал ЗакрФигСкобка],
     ТелоМакроса --> [Терминал ОткрФигСкобка, Терминал Ид, Терминал ТочкаЗапятая, Терминал ЗакрФигСкобка],
     ТелоМакроса --> [Терминал ОткрФигСкобка, Нетерминал ТелоМакроса, Терминал ТочкаЗапятая, Нетерминал Команда, Терминал ЗакрФигСкобка],
@@ -126,64 +89,5 @@ data НетерминалыАрконы =
     Команда --> [Терминал ОткрКругСкобка, Терминал Ид, Терминал ТочкаЗапятая, Терминал ЗакрКругСкобка, Терминал Вопрос, Нетерминал Макрос, Нетерминал Аргументы],
     Команда --> [Терминал ЦелочислПорязрядОперации],
     Команда --> [Терминал ЦелочислАрифмОперации]
-    -- Mov --> [Терминал Reg, Терминал Imm15]
-    -- Movs --> [Терминал Reg, Терминал Imm15],
-    -- Mov --> [Терминал Reg, Терминал Mem128]
-    -- Mov8u --> [Терминал Reg, Терминал Mem8],
-    -- Mov16u --> [Терминал Reg, Терминал Mem16],
-    -- Mov32u --> [Терминал Reg, Терминал Mem32],
-    -- Mov64u --> [Терминал Reg, Терминал Mem64],
-    -- Mov8s --> [Терминал Reg, Терминал Mem8],
-    -- Mov16s --> [Терминал Reg, Терминал Mem16],
-    -- Mov32s --> [Терминал Reg, Терминал Mem32],
-    -- Mov64s --> [Терминал Reg, Терминал Mem64],
-    -- Mov --> [Терминал Mem128, Терминал Reg],
-    -- Mov8 --> [Терминал Mem8, Терминал Reg],
-    -- Mov16 --> [Терминал Mem16, Терминал Reg],
-    -- Mov32 --> [Терминал Mem32, Терминал Reg],
-    -- Mov64 --> [Терминал Mem64, Терминал Reg],
-    -- Push --> [Терминал RegI, Терминал RegJ],
-    -- Pop --> [Терминал RegI, Терминал RegJ],
-    -- Addi --> [Терминал Reg1, Терминал Reg2, Терминал Reg3],
-    -- Addi --> [Терминал Reg1, Терминал Reg2, Терминал Imm10],
-    -- Subi --> [Терминал Reg1, Терминал Reg2, Терминал Reg3],
-    -- Subi --> [Терминал Reg1, Терминал Reg2, Терминал Imm10],
-    -- Muliu --> [Терминал Reg1, Терминал Reg2, Терминал Reg3],
-    -- Muliu --> [Терминал Reg1, Терминал Reg2, Терминал Imm10],
-    -- Mulis --> [Терминал Reg1, Терминал Reg2, Терминал Reg3],
-    -- Mulis --> [Терминал Reg1, Терминал Reg2, Терминал Imm10],
-    -- Diviu --> [Терминал Reg1, Терминал Reg2, Терминал Reg3],
-    -- Diviu --> [Терминал Reg1, Терминал Reg2, Терминал Imm10],
-    -- Divis --> [Терминал Reg1, Терминал Reg2, Терминал Reg3],
-    -- Divis --> [Терминал Reg1, Терминал Reg2, Терминал Imm10],
-    -- Modiu --> [Терминал Reg1, Терминал Reg2, Терминал Reg3],
-    -- Modiu --> [Терминал Reg1, Терминал Reg2, Терминал Imm10],
-    -- Modis --> [Терминал Reg1, Терминал Reg2, Терминал Reg3],
-    -- Modis --> [Терминал Reg1, Терминал Reg2, Терминал Imm10],
-    -- Divmodiu --> [Терминал Reg1, Терминал Reg2, Терминал Reg3, Терминал Reg4],
-    -- Divmodis --> [Терминал Reg1, Терминал Reg2, Терминал Reg3, Терминал Reg4],
-    -- Cmpis --> [Терминал Reg1, Терминал Reg2, Терминал Reg3],
-    -- Cmpiu --> [Терминал Reg1, Терминал Reg2, Терминал Reg3],
-    -- Cmpis --> [Терминал Reg1, Терминал Reg2, Терминал Imm10],
-    -- Cmpiu --> [Терминал Reg1, Терминал Reg2, Терминал Imm10],
-    -- And --> [Терминал Reg1, Терминал Reg2, Терминал Reg3],
-    -- And --> [Терминал Reg1, Терминал Reg2, Терминал Imm10],
-    -- Or --> [Терминал Reg1, Терминал Reg2, Терминал Reg3],
-    -- Or --> [Терминал Reg1, Терминал Reg2, Терминал Imm10],
-    -- Xor --> [Терминал Reg1, Терминал Reg2, Терминал Reg3],
-    -- Xor --> [Терминал Reg1, Терминал Reg2, Терминал Imm10],
-    -- Andn --> [Терминал Reg1, Терминал Reg2, Терминал Reg3],
-    -- Andn --> [Терминал Reg1, Терминал Reg2, Терминал Imm10],
-    -- Orn --> [Терминал Reg1, Терминал Reg2, Терминал Reg3],
-    -- Orn --> [Терминал Reg1, Терминал Reg2, Терминал Imm10],
-    -- Xorn --> [Терминал Reg1, Терминал Reg2, Терминал Reg3],
-    -- Xorn --> [Терминал Reg1, Терминал Reg2, Терминал Imm10],
-    -- Lshift --> [Терминал Reg1, Терминал Reg2, Терминал Reg3],
-    -- Lshift --> [Терминал Reg1, Терминал Reg2, Терминал Imm10],
-    -- Rshift --> [Терминал Reg1, Терминал Reg2, Терминал Reg3],
-    -- Rshift --> [Терминал Reg1, Терминал Reg2, Терминал Imm10],
-    -- Rshifts --> [Терминал Reg1, Терминал Reg2, Терминал Reg3],
-    -- Rshifts --> [Терминал Reg1, Терминал Reg2, Терминал Imm10],
-    -- Not --> [Терминал Reg1, Терминал Reg2],
-    -- Not --> [Терминал Reg1, Терминал Imm15]
+
    ]
