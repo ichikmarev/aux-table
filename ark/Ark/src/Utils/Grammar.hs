@@ -1,9 +1,9 @@
 ﻿module Grammar (
-   НетерминалыАрконы(..),
+   НетерминалыМУР128(..),
 
-   ТерминалыАрконы(..),
+   ТерминалыМУР128(..),
 
-   грамматикаАрконы
+   грамматикаМУР128
 ) where
 
 import Rules
@@ -34,7 +34,7 @@ import Rules
 --Reta
 --RetaCon
 
-data ТерминалыАрконы =
+data ТерминалыМУР128 =
   RInt        | FInt          | SP         | BP         | Movim     |
   LoadReg     | StoreReg      | PushPopIm  | Arifm3Args | MovRegF   |
   StoreRegF   | LoadRegF      | Pup        | Arifm3F    | Arifm2F   |
@@ -51,13 +51,13 @@ data ТерминалыАрконы =
 
  deriving(Eq,Show,Ord,Read,Enum,Bounded)
 
-data НетерминалыАрконы =
+data НетерминалыМУР128 =
   Programm       | EntryPoint  | Body     | Section         |
-  Attr           | Args 
+  Attr           | Args
  deriving(Eq,Show,Ord,Read,Enum,Bounded)
 
-грамматикаАрконы :: [Правило НетерминалыАрконы ТерминалыАрконы]
-грамматикаАрконы =
+грамматикаМУР128 :: [Правило НетерминалыМУР128 ТерминалыМУР128]
+грамматикаМУР128 =
    [
     Программа --> [Терминал Формат, Терминал МУР, Терминал ОткрФигСкобка, Нетерминал ТочкаВхода, Нетерминал ТелоПрограммы, Терминал ЗакрФигСкобка],
     ТелоПрограммы --> [Нетерминал Макрос],
